@@ -11,7 +11,7 @@ Run a quality pass on the Express API in `$ARGUMENTS`. If no path is given, use 
 Wait until both have finished.
 
 **Step 2 - depends on step 1.** Take the `UNTESTED:` line from route-reviewer.
-- If it lists anything, start the `test-writer` subagent and pass it exactly that list.
+- If it lists anything, start the `test-writer` subagent with exactly that list and this task: "Add a supertest test for each item on this list in the API's `tests/` folder, following the existing tests. Then run `npm test` in the API folder and report each test you added plus the full pass/fail result. Mark any new test that fails as `FAILS`." Wait for it to finish before step 3.
 - If it says `none`, skip this step and say so.
 
 **Step 3 - report.** Merge everything into one short report:
